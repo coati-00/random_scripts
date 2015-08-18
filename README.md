@@ -1,3 +1,4 @@
 random_scripts
 ==============
-I'm putting scripts I made either for fun or to make my life a tad easier here.
+These scripts are not part of any particular project, they were either done for fun or for school. Some are actually useful...
+
