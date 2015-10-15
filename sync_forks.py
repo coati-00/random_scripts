@@ -1,9 +1,10 @@
 import subprocess, shlex
 ''' 
- Very silly script to sync all of my github repose with their remotes at work...
+ Very silly script to sync all of my github forked repos with their remotes and to update the master
+ branch of other projects...
  Assumes upstreams have already been set up properly. Good excuse to practice async python
  e.g. make sure subprocess process finishes before moving to the next one.
- Also good excuse to run as celery job.
+ Possibly use as excuse to run as celery job?
 '''
 
 # indicate what directory holds git repos
