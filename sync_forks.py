@@ -1,4 +1,5 @@
 import subprocess, shlex
+import argparse
 ''' 
  Very silly script to sync all of my github forked repos with their remotes and to update the master
  branch of other projects...
@@ -66,7 +67,7 @@ class SyncGitRepos(object):
         if output[1] != '':
             return {'upstream_output' : output[1], 'upstream_status' : False }
         if output[0] != '':
-            new_output = shlex.split(output[0]):
+            new_output = shlex.split(output[0])
             if 'upstream' in new_output:
                 return {'upstream_output' : output[0], 'upstream_status': True }
         else:
@@ -100,4 +101,28 @@ class SyncGitRepos(object):
     def traverse_directory():
         '''Go over each subdirectory and update.'''
 
+
+if __name__ == '__main__':
+    argparser.add_argument("--directory", help="Directory repositories are in",
+        default="Test Description")
+    argparser.add_argument("--", help="Directory repositories are in",
+        default="Test Description")
+    argparser.add_argument("--", help="Directory repositories are in",
+        default="Test Description")
+    args = argparser.parse_args()
+file_to_search = sys.argv[1]
+destination_file = sys.argv[2]
+os.getcwd()
+
+
+def traverse_repositories(file_name):
+    for path, subdirs, files in os.walk(file_name):
+        files.sort()
+        for f_name in files:
+            if(is_plugin(f_name)):
+                file_path = os.path.join(path,f_name)
+                call(["cp", file_path, destination_file])
+
+#call proceeding methods
+move_downloads(file_to_search)
 
